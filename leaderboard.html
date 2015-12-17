@@ -1,0 +1,70 @@
+<section class="reset" ng-show="users.isLoggedIn()"> <!--for demo wrap-->
+ <h1>Leaderboards</h1>
+
+ <div  class="tbl-header">
+  <table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+     <tr >
+      <th>Full Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Score</th>
+     </tr>
+   </thead>
+  </table>
+ </div>
+
+ <div  class="tbl-content">
+  <table cellpadding="0" cellspacing="0" border="0">
+   <tbody>
+     <tr ng-repeat="user in users.all">
+      <td><h2>{{user.local.fullname}}</h2></td>
+      <td><h2>{{ user.local.username}}</h2></td>
+      <td><h3>{{ user.local.email}}</h3></td>
+      <td><h3>{{ user.local.score}}</h3></td>
+     </tr>
+   </tbody>
+  </table>
+ </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!--    <strong>{{user.local.fullname}}</strong> {{ user.local.username}} <br> {{ user.local.email}} <br> {{ user.local.score }}
+      <p>working</p>
+    
+  
+</section>
+
+<section id="profileSection">
+  <script type="text/x-template" id="profile-template">
+    <div class="widget">
+      <div class="cover">
+        <img src="http://www.barrbeaconschool.co.uk/wp-content/uploads/2015/02/glacier-lagoon-iceland-hd-wallpaper_0_0.jpg" />
+      </div>
+      <img src="<%= user.local.picture_url %>" class="photo" />
+      <h1><%= user.local.fullName %></h1>
+      <h2><%= user.local.email %></h2>
+      <h3><%= user.favourite_categories %></h3>
+    </div>
+  </script>
+  <div class="row" id="my-info"></div>
+</section> -->

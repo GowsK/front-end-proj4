@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="space_shooter">
+<head>
+  <title>Space Shooter</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+  <script src="https://cdn.rawgit.com/auth0/angular-jwt/master/dist/angular-jwt.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-resource.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+
+  <script type="text/javascript" src="./js/app.js"></script>
+
+  <script type="text/javascript" src="./js/models/user.js"></script>
+  <script type="text/javascript" src="./js/controllers/usersController.js"></script>
+
+  <script type="text/javascript" src="./js/services/tokenService.js"></script>
+  <script type="text/javascript" src="./js/services/authInterceptor.js"></script>
+
+  <script type="text/javascript" src="./js/script.js"></script>
+  <script type="text/javascript" src="./js/logocanvas.js"></script>
+  <script type="text/javascript" src="./js/click.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.0/animate.css">
+
+</head>
+
+<body ng-controller="usersController as users">
+
+
+  <nav class="animated fadeInDown">
+    <ul>
+      <li><a ui-sref-active="active" id="home" ui-sref="home">Home</a></li>
+      <li><a ui-sref-active="active" ui-sref="profile">Profile</a></li>
+      <li><a ui-sref-active="active" id="leaderboard" ui-sref="leaderboard">Leaderboard</a></li>
+     
+    </ul>
+  </nav>
+
+
+  
+
+  <section ng-show="!users.isLoggedIn()">
+    <button ng-click="login = !login" class="button button-full-flip button-fade animated fadeIn">Login</button>
+    <form id="login" ng-show="login" class="animated fadeIn" ng-submit="users.login()">
+      <label for="email">Email</label>
+      <input type="text" class="feedback-input" name="email" autocomplete="off" placeholder="email" ng-model="users.user.email"><br>
+
+      <label for="password">Password</label>
+      <input type="password" class="feedback-input" name="password" placeholder="password" ng-model="users.user.password">
+
+      <input type="submit" value="Access" onclick="start();">
+    </form>
+  </section>
+
+  <section ng-show="!users.isLoggedIn()">
+   <button ng-click="register = !register" class="button button-full-flip button-fade animated fadeIn">Register</button>
+   <form id="register" ng-show="register" class="animated fadeIn" ng-submit="users.register()">
+    <label for="username">Username</label>
+    <input type="text" class="feedback-input" name="username" autocomplete="off" placeholder="Username" ng-model="users.user.username">
+
+    <label for="fullname">Full Name</label>
+    <input type="fullname" class="feedback-input" name="fullname" autocomplete="off" placeholder="fullname" ng-model="users.user.fullname">
+
+   <!--  <label for="image">Image</label>
+    <input type="text" class="feedback-input" name="image" placeholder="Photograph of yourself" ng-model="users.user.image"> -->
+
+    <label for="email">Email</label>
+    <input type="text" class="feedback-input" name="email" autocomplete="off" placeholder="email" ng-model="users.user.email">
+
+    <label for="password">Password</label>
+    <input type="password" class="feedback-input" name="password" autocomplete="off" placeholder="password" ng-model="users.user.password">
+
+    <input type="submit" value="Access">
+  </form>
+</section>
+
+
+<div class="canvas">
+  <div class="starwars-demo" ng-show="!users.isLoggedIn()">
+    <img src="//cssanimation.rocks/demo/starwars/images/star.svg" alt="Star" class="star">
+    <img src="//cssanimation.rocks/demo/starwars/images/wars.svg" alt="Wars" class="wars">
+  </div>
+  <canvas id="canvasone" class="animated fadeIn" ng-show="!users.isLoggedIn()" width="600" height="600"></canvas>
+</div>
+
+
+<div ui-view></div>
+
+</body>
+
+</html>
