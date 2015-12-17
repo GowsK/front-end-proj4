@@ -25,7 +25,7 @@ function initializeGameZone() {
       intervalspeed = 15;
 
 
-  var snd = new Audio("../sounds/star_wars.mp3");
+  var snd = new Audio("./sounds/star_wars.mp3");
   snd.addEventListener('ended', function() {
       this.currentTime = 0;
       this.play();
