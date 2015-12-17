@@ -20,7 +20,7 @@ function initializeStartScreen() {
     canvas = document.getElementById('canvasone');
     ctx = canvas.getContext('2d');
     starfield = new Image();
-    starfield.src = '../images/stars.jpg';
+    starfield.src = './images/stars.jpg';
     setInterval(gameLoop, 25);  
   }
   

@@ -172,11 +172,11 @@ function initializeGameZone() {
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
     enemy = new Image();
-    enemy.src = 'front-end-proj4/images/tiefighterone.png';
+    enemy.src = './images/tiefighterone.png';
     ship = new Image();
-    ship.src = 'front-end-proj4/images/xwing.png';
+    ship.src = './images/xwing.png';
     starfield = new Image();
-    starfield.src = 'front-end-proj4/images/stars.jpg';
+    starfield.src = './images/stars.jpg';
     myVar =  setInterval(gameLoop, intervalspeed);
     console.log(intervalspeed);
     document.addEventListener('keydown', keyDown, false);
