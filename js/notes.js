@@ -192,7 +192,7 @@ $(function(){
       for (var j = 0; j < enemies.length; j++) {
         if (lasers[i][1] <= (enemies[j][1] + enemies[j][3]) && lasers[i][0] >= enemies[j][0] && lasers[i][0] <= (enemies[j][0] + enemies[j][2])) {
           remove = true;
-          var expl = new Audio("../sounds/explosion_one.mp3");
+          var expl = new Audio("./sounds/explosion_one.mp3");
           expl.play();
           enemies.splice(j, 1);
           score += 10;
@@ -315,7 +315,7 @@ $(function(){
           { 
             e.preventDefault(),
             lasers.push([ship_x + 1, ship_y - 20, 4, 20]);
-            var snd_one = new Audio("tie_fighter_sound.mp3"); // buffers automatically when created
+            var snd_one = new Audio("./sounds/tie_fighter_sound.mp3"); // buffers automatically when created
             snd_one.play();
           }
         if (e.keyCode == 32 && lasers.length <= laserTotal && alive) 
