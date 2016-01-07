@@ -29,11 +29,12 @@
 <body ng-controller="usersController as users">
 
 
-  <nav class="animated fadeInDown">
+  <nav class="animated fadeInDown" ng-show="users.isLoggedIn()">
     <ul>
       <li><a ui-sref-active="active" id="home" ui-sref="home">Home</a></li>
       <li><a ui-sref-active="active" ui-sref="profile">Profile</a></li>
       <li><a ui-sref-active="active" id="leaderboard" ui-sref="leaderboard">Leaderboard</a></li>
+      <li><a ng-click="users.logout()">LogOut</a></li>
      
     </ul>
   </nav>
