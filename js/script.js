@@ -158,17 +158,19 @@ function initializeGameZone() {
       ctx.fillText('Score: ', 245, (height/2)+40);
       ctx.fillText('Click Restart', 245, (height/2)+80);
       ctx.fillText(score, 320, (height/2)+40);
-    
+      canvas.addEventListener('click', continueButton, false);
 
     }
   }
 
   function continueButton() {
-    console.log("hi")
+    console.log("hi");
+    location.reload();
   }
 
   function init() {
-    console.log("banana")
+    console.log("banana");
+    canvas.removeEventListener('click', startButton, false);
     canvas = document.getElementById('canvas');
     ctx = canvas.getContext('2d');
     enemy = new Image();
@@ -259,6 +261,11 @@ function initializeGameZone() {
     ctx.fillStyle = '#fff';
     ctx.fillText('Ready?', 275, height / 2 - 40);
     ctx.fillText('Click Start', 245, height / 2);
+    canvas.addEventListener('click', startButton, false);
+  }
+
+  function startButton() {
+    init();
   }
   
 
