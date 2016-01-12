@@ -26,7 +26,7 @@ Use the directional arrows to navigate your X-Wing through the onslaught of Tie 
 * API
 
 ##Back-end
-Have a look at my API below.
+Have a look at the back-end below.
 
 [https://github.com/GowsK/GA-ProjectFour/tree/master/space_shooter/api](https://github.com/GowsK/GA-ProjectFour/tree/master/space_shooter/api)
 
