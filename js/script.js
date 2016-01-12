@@ -154,6 +154,7 @@ function initializeGameZone() {
     ctx.fillText('Score: ', 490, 30);
     ctx.fillText(score, 555, 31);
     if (!alive) {
+      document.getElementsByClassName('twinkling')[0].className = 'twinkling';
       ctx.fillText('Game Over!', 245, height / 2);
       ctx.fillText('Score: ', 245, (height/2)+40);
       ctx.fillText('Click Restart', 245, (height/2)+80);
@@ -169,6 +170,7 @@ function initializeGameZone() {
   }
 
   function init() {
+    document.getElementsByClassName('twinkling')[0].className = 'twinkling game-running';
     console.log("banana");
     canvas.removeEventListener('click', startButton, false);
     canvas = document.getElementById('canvas');

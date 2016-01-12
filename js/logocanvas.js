@@ -28,6 +28,6 @@ function initializeStartScreen() {
     drawStarfield();
   }
 
-  initone();
+  // initone();
 
 };
