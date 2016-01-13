@@ -40,5 +40,7 @@ Hosted at
 
 ![image](https://github.com/GowsK/front-end-proj4/blob/master/images/loggedin_shooting.png)
 
+##Improvements
 
+I am currently implementing a leaderboard as well as a boss battle when a certain score is reached.
 
